@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Head from 'next/head';
+import Header from '@components/header/Header';
+import NavBar from '../components/nav/nav'
+import Footer from '@components/Footer/Footer';
 
 export default function Home() {
   return (
@@ -9,6 +10,8 @@ export default function Home() {
         <title>Next.js Starter!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <NavBar />
 
       <main>
         <Header title="Welcome to my app!" />
