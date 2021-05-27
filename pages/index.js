@@ -1,7 +1,10 @@
 import Head from 'next/head';
-import Header from '@components/header/Header';
-import Notes from '../components/nav/nav';
-import Footer from '@components/Footer/Footer';
+import Header from '../components/header/Header';
+import Notes from '../components/nav/Notes';
+import Footer from '../components/footer/Footer';
+
+
+
 
 export default function Home() {
   return (
@@ -11,6 +14,7 @@ export default function Home() {
         <link rel="icon" href="../images/" />
       </Head>
 
+      <Header/>
       <Notes/>
 
       <main>
