@@ -12,7 +12,6 @@ export default function Header() {
         src="/../public/images/logo2.0.png"
         width={120}
         height={100}
-        cursor='pointer'
       />
     </Link>
     <h1>Ho-re-ca.staff</h1>
