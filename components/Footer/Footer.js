@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-export default function Footer() {
+Footer = () => {
   const styles = useStyles();
   return (
     <footer className={styles.footer}>
@@ -41,3 +41,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+export default Footer
