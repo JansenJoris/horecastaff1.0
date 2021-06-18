@@ -1,24 +1,19 @@
 
 import React from 'react';
+import Hamburger from './hamburger';
+
 import { fade, makeStyles } from '@material-ui/core/styles';
 
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
-import MoreIcon from '@material-ui/icons/MoreVert';
-import FacebookIcon from '@material-ui/icons/Facebook';
 
 import {
     Link,
     AppBar,
     Toolbar,
-    IconButton,
-    Button,
     Typography,
     InputBase
 } from '@material-ui/core'
-
-import Hamburger from './hamburger';
-
 
 
 const useStyles = makeStyles((theme) => ({
@@ -30,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         display: 'none',
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('xs')]: {
             display: 'block',
         },
     },
@@ -44,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.spacing(2),
         marginLeft: 0,
         width: '100%',
-        [theme.breakpoints.up('sm')]: {
+        [theme.breakpoints.up('xs')]: {
             marginLeft: theme.spacing(3),
             width: 'auto',
         },
@@ -59,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
     },
     inputRoot: {
-        color: 'pink',
+        color: 'white',
     },
     inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
@@ -67,22 +62,7 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
         transition: theme.transitions.create('width'),
         width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: '20ch',
-        },
-    },
-    sectionDesktop: {
-        display: 'none',
-        [theme.breakpoints.up('md')]: {
-            display: 'flex',
-        },
-    },
-    sectionMobile: {
-        display: 'flex',
-        [theme.breakpoints.up('md')]: {
-            display: 'none',
-        },
-    },
+    }
 }));
 
 export default function PrimarySearchAppBar() {
@@ -91,16 +71,9 @@ export default function PrimarySearchAppBar() {
     return (
         <div className={classes.grow}>
             <Typography className={classes.title} variant="h6" noWrap>
-                <AppBar position="static">
+                <AppBar position="static" >
                     <Toolbar>
-                        <IconButton
-                            edge="start"
-                            className={classes.menuButton}
-                            color="inherit"
-                            aria-label="open drawer"
-                        >
-                            <Hamburger />
-                        </IconButton>
+                        <Hamburger />
                         <Link href='/'
                             passhref={true}
                             color='inherit'
@@ -122,16 +95,11 @@ export default function PrimarySearchAppBar() {
                             />
                         </div>
                         <div className={classes.grow} />
-                        <div className={classes.sectionDesktop}>
+                        <div>
                             <Link href='/hotel' passHref={true} color='inherit'>
                                 <AccountCircle />
                             </Link>
-                        </div>
-                        <div className={classes.sectionMobile}>
-                            <Button color="inherit">
-                                <FacebookIcon />
-                                <MoreIcon />
-                            </Button>
+
                         </div>
                     </Toolbar>
                 </AppBar>

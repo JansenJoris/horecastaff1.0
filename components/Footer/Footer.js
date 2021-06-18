@@ -2,17 +2,19 @@ import React from 'react';
 import Link from '@material-ui/core/Link';
 
 import { makeStyles } from '@material-ui/core/styles';
-import Image from 'next/image';
-import logo from '../../public/images/logo.png';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 
 
 const useStyles = makeStyles(() => ({
   footer: {
     display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'center',
-    height: '10%',
-    marginTop: '87vh',
+    marginTop: '38.2vh',
+    backgroundColor: '#90caf9',
   }
 }));
 
@@ -20,19 +22,22 @@ export default function Footer() {
   const styles = useStyles();
   return (
     <footer className={styles.footer}>
+
+      <Link href='https://www.facebook.com' passHref={true} color='inherit'>
+        <FacebookIcon />
+      </Link>
+      <Link href='https://www.twitter.com' passHref={true} color='inherit'>
+        <TwitterIcon />
+      </Link>
+      <Link href='https://www.instagram.com' passHref={true} color='inherit'>
+        <InstagramIcon />
+      </Link>
+
       <Link href="/"
         passHref={true}
         underline='none'>
-        <Image
-          alt='horecastaff logo'
-          src={logo}
-          height={30}
-          width={30}
-          quality={100}
-          priority
-        />
         Ho.re.ca.staff 2021
-        </Link>
+      </Link>
     </footer>
   )
 }

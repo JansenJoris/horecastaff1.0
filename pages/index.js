@@ -1,8 +1,8 @@
 import React from 'react';
 import Layout from '../components/layout/layout';
+import Carousel from '../components/carousel/carousel.js'
 
 import Head from 'next/head';
-import Notes from '../components/nav/Notes';
 
 
 
@@ -15,9 +15,9 @@ export default function Home() {
         <link rel="icon" href="../images/" />
       </Head>
       <Layout>
-          <Notes />
-          <main>
-          </main>
+        <div style={{ width: '80%' }}>
+          <Carousel />
+        </div>
       </Layout>
     </>
   )

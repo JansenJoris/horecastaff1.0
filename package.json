@@ -19,10 +19,16 @@
     "next-sass": "^1.0.3",
     "prop-types": "^15.7.2",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-alice-carousel": "^2.5.1",
+    "react-dom": "17.0.1",
+    "sass": "^1.35.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
     "autoprefixer": "^10.2.5",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^1.0.0",
     "postcss": "^8.3.0",
     "tailwindcss": "^2.1.2"
   }
