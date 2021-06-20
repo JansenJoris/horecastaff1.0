@@ -22,7 +22,7 @@ const useStyles = makeStyles(() => ({
 const Footer = () => {
   const styles = useStyles();
   return (
-    <footer className={styles.footer}>
+    <div className={styles.footer}>
 
       <Link href='https://www.facebook.com' passHref={true} color='inherit'>
         <FacebookIcon />
@@ -39,7 +39,7 @@ const Footer = () => {
         underline='none'>
         Ho.re.ca.staff 2021
       </Link>
-    </footer>
+    </div>
   )
 }
 
