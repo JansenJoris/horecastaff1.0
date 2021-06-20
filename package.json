@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "export": "next export"
-  },
+    "build": "next build"
+    },
   "dependencies": {
     "@fontsource/rajdhani": "^4.3.0",
     "@headlessui/react": "^1.2.0",

@@ -5,7 +5,7 @@ import style from '../components/carousel/styles.module.css'
 
 const items = [
     <div className="item">
-        <img className={style.img} style={{border:'solid 25px rgba(214, 167, 236, 0.424)'}}
+        <img className={style.img} style={{ border: 'solid 25px rgba(214, 167, 236, 0.424)' }}
             src='https://images.unsplash.com/photo-1587336674521-35e6e2cc7917?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop' />
     </div>
     ,
