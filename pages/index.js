@@ -15,9 +15,7 @@ export default function Home() {
         <link rel="icon" href="../images/" />
       </Head>
       <Layout>
-        <div style={{ width: '80%' }}>
-          <Carousel />
-        </div>
+        <Carousel />
       </Layout>
     </>
   )

@@ -63,7 +63,8 @@ export default function Hamburger() {
                 </List>
                 <Divider />
                 <List>
-                    {['Hotel', 'Resto', 'Cafe', 'Flexi-Job'].map((text, index) => (
+                    <h4>JOBS</h4>
+                    {['Hotel', 'Resto', 'Cafe', 'Flexi-Jobs'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemText primary={text} />
                         </ListItem>
