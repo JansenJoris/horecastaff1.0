@@ -5,6 +5,8 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../src/theme';
 import "../components/carousel/styles.module.css";
+import 'react-alice-carousel/lib/alice-carousel.css';
+import style from '../components/carousel/styles.module.css'
 
 
 export default function MyApp(props) {
@@ -26,7 +28,7 @@ export default function MyApp(props) {
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-        <CssBaseline />
+        <CssBaseline className={style} />
         <Component {...pageProps} />
       </ThemeProvider>
     </React.Fragment>
