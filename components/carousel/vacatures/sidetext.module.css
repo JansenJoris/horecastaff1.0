@@ -1,11 +1,25 @@
 .vacature {
-  display: flex;
-  justify-content: center;
-  margin-left: 75%;
-  margin-top: 0;
+  margin: 0;
   padding: 0;
   height: 64vh;
-  width: 25vw;
-  border: 4px solid rgba(214, 167, 236, 0.424);
+  width: 20vw;
   z-index: 5;
+}
+
+.font {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-family: Rajdhani;
+  color: #ffffff;
+  font-size: 46px;
+}
+
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }

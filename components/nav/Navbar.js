@@ -13,7 +13,9 @@ import {
     Toolbar,
     Typography,
     InputBase
-} from '@material-ui/core'
+} from '@material-ui/core';
+
+const logo = '/images/logohorecastaff.png'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -78,7 +80,7 @@ export default function PrimarySearchAppBar() {
                             passhref={true}
                             color='inherit'
                             underline='none'>
-                            Ho.re.ca.staff
+                            <img src={logo} alt='horecastaff logo' /> 
                         </Link>
 
                         <div className={classes.search}>

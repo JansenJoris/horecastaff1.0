@@ -40,15 +40,23 @@
   perspective: 370px;
 }
 
+.sidetext {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: 1fr;
+  gap: 0px 22px;
+  grid-template-areas: ". .";
+  background-color: #86c6f0;
+}
+
 img.img {
   display: flex;
   align-items: center;
-  width: 75vw;
-  height: 50vh;
+  width: 70vw;
+  height: 65vh;
   object-fit: cover;
   transition: transform 1s;
-  margin-top: -64vh;
-  border-radius: 15px;
+  border-radius: 0px 20px 20px 0px;
 }
 
 img.img:hover {
