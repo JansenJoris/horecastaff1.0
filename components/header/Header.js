@@ -14,6 +14,5 @@ export default function Header() {
         height={100}
       />
     </Link>
-    <h1>Ho-re-ca.staff</h1>
   </div>
 }

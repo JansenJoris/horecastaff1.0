@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link'
 //navBar
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
@@ -17,20 +17,23 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles({
     fullList: {
-        width: '20vw',
-        marginTop: '10%',
-        background: '#90caf9'
+        width: '25vw',
+        marginTop: '10vh',
+        background: '#1098f7'
     },
     styles: {
         height: '100%',
         width: '100%',
-        backgroundColor: '#90caf9'
+        backgroundColor: '#1098f7'
     },
     list: {
         display: 'flex',
         justifyContent: 'center',
         marginLeft: '25%',
         marginRight: '25%'
+    },
+    dividerColor: {
+        background: '#ffffff'
     }
 });
 
@@ -54,23 +57,37 @@ export default function Hamburger() {
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <Typography align='center' gutterBottom>
-                <List>
+                {/* <List>
                     {['Sollicitant', 'Werkgever'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}
-                </List>
-                <Divider />
+                </List> */}
+                <Divider className={classes.dividerColor} />
                 <List>
-                    <h4>JOBS</h4>
-                    {['Hotel', 'Resto', 'Cafe', 'Flexi-Jobs'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
+                    <ListItem button >
+                        <Link href='/vacatures/hotel'>
+                            <p>Hotel</p>
+                        </Link>
+                    </ListItem>
+                    <ListItem button >
+                        <Link href='/vacatures/resto'>
+                            <p>Resto</p>
+                        </Link>
+                    </ListItem>
+                    <ListItem button>
+                        <Link href='/vacatures/cafe'>
+                            <p>Cafe</p>
+                        </Link>
+                    </ListItem>
+                    <ListItem button >
+                        <Link href='/vacatures/flexi-jobs'>
+                            <p>Flexi</p>
+                        </Link>
+                    </ListItem>
                 </List>
-                <Divider />
+                <Divider className={classes.dividerColor} />
                 <List>
                     {['News', 'Contact', 'Partners'].map((text, index) => (
                         <ListItem button key={text}>
@@ -78,7 +95,7 @@ export default function Hamburger() {
                         </ListItem>
                     ))}
                 </List>
-                <Divider />
+                <Divider className={classes.dividerColor} />
             </Typography>
         </div>
     );
@@ -87,7 +104,7 @@ export default function Hamburger() {
         <div>
             {[''].map((anchor) => (
                 <React.Fragment>
-                    <Button onClick={toggleDrawer(anchor, true)} style={{ backgroundColor: '#90caf9' }}>
+                    <Button onClick={toggleDrawer(anchor, true)} style={{ backgroundColor: '#1098f7' }}>
                         {anchor}
                         {/* Hamburger logo */}
                         <MenuIcon />

@@ -14,8 +14,7 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: '38.2vh',
-    backgroundColor: '#90caf9',
+    backgroundColor: '#1098f7',
   }
 }));
 
@@ -24,16 +23,15 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
 
-      <Link href='https://www.facebook.com' passHref={true} color='inherit'>
+      <Link href='https://www.facebook.com/horecastaff' passHref={true} color='inherit'>
         <FacebookIcon />
       </Link>
-      <Link href='https://www.twitter.com' passHref={true} color='inherit'>
+      <Link href='https://www.twitter.com/horecastaff' passHref={true} color='inherit'>
         <TwitterIcon />
       </Link>
-      <Link href='https://www.instagram.com' passHref={true} color='inherit'>
+      <Link href='https://www.instagram.com/horecastaff.eu' passHref={true} color='inherit'>
         <InstagramIcon />
       </Link>
-
       <Link href="/"
         passHref={true}
         underline='none'>

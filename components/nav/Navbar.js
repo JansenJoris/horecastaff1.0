@@ -21,6 +21,7 @@ const logo = '/images/logohorecastaff.png'
 const useStyles = makeStyles((theme) => ({
     grow: {
         flexGrow: 1,
+        
     },
     menuButton: {
         marginRight: theme.spacing(2),
@@ -64,6 +65,10 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
         transition: theme.transitions.create('width'),
         width: '100%',
+    },
+    barColor:
+    {
+        backgroundColor: '#B89E97'
     }
 }));
 
@@ -73,14 +78,14 @@ export default function PrimarySearchAppBar() {
     return (
         <div className={classes.grow}>
             <Typography className={classes.title} variant="h6" noWrap>
-                <AppBar position="static" >
+                <AppBar position="static" className={classes.barColor} >
                     <Toolbar>
                         <Hamburger />
                         <Link href='/'
                             passhref={true}
                             color='inherit'
                             underline='none'>
-                            <img src={logo} alt='horecastaff logo' /> 
+                            <img src={logo} alt='horecastaff logo' />
                         </Link>
 
                         <div className={classes.search}>
@@ -88,20 +93,19 @@ export default function PrimarySearchAppBar() {
                                 <SearchIcon />
                             </div>
                             <InputBase
-                                placeholder="Jobs"
+                                placeholder="JOBS"
                                 classes={{
                                     root: classes.inputRoot,
                                     input: classes.inputInput,
                                 }}
-                                inputProps={{ 'aria-label': 'Jobs' }}
+                                inputProps={{ 'aria-label': 'JOBS' }}
                             />
                         </div>
                         <div className={classes.grow} />
                         <div>
-                            <Link href='/hotel' passHref={true} color='inherit'>
+                            <Link href='/profile/login' passHref={true} color='inherit'>
                                 <AccountCircle />
                             </Link>
-
                         </div>
                     </Toolbar>
                 </AppBar>

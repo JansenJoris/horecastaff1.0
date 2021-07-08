@@ -1,5 +1,4 @@
-import React from 'react';
-import { connectToDatabase } from '../util/mongodb'
+import { connectToDatabase } from '../util/mangodbHorecastaff'
 
 import Layout from '../components/layout/layout';
 import SlideShow from '../components/carousel/carousel.js'
@@ -7,37 +6,65 @@ import SlideShow from '../components/carousel/carousel.js'
 
 import Head from 'next/head';
 
-export async function getServerSideProps(context) {
-    const { db } = await connectToDatabase()
 
-    const data = await db.collection('horecastaffCN'/* 'listingsAndReviews' */).find({}).limit(5).toArray()
+/* const items =
+    [
+        <div className={style.sidetext}>
+            <div className="item" data-value="1">
+                <img className={style.img}
+                    src='https://images.unsplash.com/photo-1587336674521-35e6e2cc7917?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop' />
+            </div>
+            <SideText />
+        </div>
+        ,
+        <div className={style.sidetext}>
+            <div className="item" data-value="1">
+                <img className={style.img}
+                    loading='lazy'
+                    src='https://images.unsplash.com/photo-1504593811423-6dd665756598?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80' />
+            </div>
+            <SideText />
+        </div>
+        ,
+        <div className={style.sidetext}>
+            <div className="item" data-value="1">
+                <img className={style.img}
+                    loading='lazy'
+                    src='https://images.unsplash.com/photo-1546195643-70f48f9c5b87?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80' />
+            </div>
+            <SideText />
+        </div>
+        ,
+        <div className={style.sidetext}>
+            <div className="item" data-value="1">
+                <img className={style.img}
+                    src='https://images.unsplash.com/photo-1549996647-190b679b33d7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80' />
+            </div>
+            <SideText />
+        </div>
+    ];
 
-    //converte data from MongoDB to readable Javascript.
-    const vacatures = JSON.parse(JSON.stringify(data));
-
-    //Just filter the fields that you need from de DB
-    const filtered = vacatures.map(vacature => {
-        //const price = JSON.parse(JSON.stringify(vacature.price))
-        return { //props
-            _id: vacature._id,
-            name: vacature.name,
-            image: vacature.image.picture_url,
-            /* address: vacature.address,
-            summary: vacature.summary,
-            guests: vacature.accommodates,
-            price: price.$numberDecimal, */
-        }
-    })
-    return {
-        props: { vacatures: filtered },
-    }
+const SlideShow = () => {
+    return (
+        <AliceCarousel
+            autoPlay
+            autoPlayStrategy="default"
+            autoPlayInterval={2000}
+            animationDuration={2000}
+            animationType="slide"
+            infinite
+            touchTracking={false}
+            disableDotsControls={false}
+            disableButtonsControls
+            items={items}
+        />)
 }
 
+ */
 
 
 export default function Home({ vacatures }) {
-    console.log(vacatures);
-
+    console.log(vacatures)
     return (
         <>
             <Head>
@@ -46,47 +73,57 @@ export default function Home({ vacatures }) {
             </Head>
             <main>
                 <Layout>
+                    <SlideShow />
                     <div class='flex flex-row flex-wrap'>
                         {
-                            vacatures && vacatures.map(vacature => (
-                                <div class='flex-auto w-1/4 rounded overflow-hidden shadow-lg m-2'>
-                                    <img class='w-full' src={vacature.image} />
+                            vacatures.map((vacature) => (
+                                <div class='flex-auto w-1/3 rounded overflow-hidden shadow-lg m-2'>
+                                    <img class='w-full h-full' src={vacature.image} />
                                     <div class='px6  py-4'>
                                         <div class='font-bold text-xl mb-2'>
-                                            {vacature.name}{/* (Up to{vacature.guests} guests)*/}
+                                            {vacature.name}
                                         </div>
                                     </div>
                                 </div>))}
                     </div>
-                    <SlideShow />
                 </Layout>
-            </main>
+        </main>
         </>
     )
 }
-{/*
-<div class='flex flex-row flex-wrap'>
-                    {
-                        vacatures && vacatures.map(vacature => (
-                            <div class='flex-auto w-1/4 rounded overflow-hidden shadow-lg m-2'>
-                                <img class='w-full' src={vacature.image} />
-                                <div class='px6  py-4'>
-                                    <div class='font-bold text-xl mb-2'>
-                                        {vacature.name}{/* (Up to{vacature.guests} guests)
-                                    </div>
-                                </div>
-                                <p>
-                  {vacature.address.street}
-                </p>
-                <p class="text-gray-700 text-base">
-                  {vacature.summery}
-                </p>
-                <div class="text-center py-2 my-2 fond-bold">
-                  <span class="text-green-50">
-                    ${vacature.price}
-                  </span>/night
-                </div> 
-                            </div>
-                        ))
-                    }
-                </div>*/}
+export async function getServerSideProps(context) {
+    const { db } = await connectToDatabase()
+
+    const dataHorecastaff = await db.collection('horecastaffCN').find({}).limit(100).toArray()
+
+    //converte data from MongoDB to readable Javascript.
+    const vacatures = JSON.parse(JSON.stringify(dataHorecastaff));
+
+    //Just filter the fields that you need from de DB
+    const filtered = vacatures.map(vacature => {
+        //const price = JSON.parse(JSON.stringify(vacature.price))
+        return { //props
+            _id: vacature._id,
+            name: vacature.name,
+            image: vacature.image.picture_url,
+        }
+    })
+    return {
+        props: { vacatures: filtered },
+    }
+}
+
+
+/* export async function getServerSideProps() {
+    const { db } = await connectToDatabase();
+    const horecastaff = await db
+        .collection('horecastaffCN')
+        .find({})
+        .limit(20)
+        .toArray();
+    return {
+        props: {
+            horecastaff: JSON.parse(JSON.stringify(horecastaff)),
+        },
+    };
+} */

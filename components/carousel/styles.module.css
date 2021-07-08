@@ -1,5 +1,5 @@
 .container {
-  min-height: 100vh;
+  height: 80vh;
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -16,14 +16,14 @@
 .slideTrack {
   display: flex;
   width: calc(500px * 18);
-  animation: scoll 50s linear infinite;
+  animation: scroll 5s linear infinite;
 }
 
 .slideTrack:hover {
   animation-play-state: paused;
 }
 
-@keyframes scoll {
+@keyframes scroll {
   0% {
     transform: translateX(0);
   }
@@ -32,31 +32,22 @@
   }
 }
 
-.slide {
-  width: 600px;
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  perspective: 370px;
-}
-
 .sidetext {
   display: grid;
   grid-template-columns: 1fr 0.5fr;
   grid-template-rows: 1fr;
   gap: 0px 22px;
   grid-template-areas: ". .";
-  background-color: #86c6f0;
+  background-color: #decccc;
 }
 
 img.img {
-  display: flex;
-  align-items: center;
-  width: 70vw;
-  height: 65vh;
+  margin: 0 auto;
+  width: 95vw;
+  height: 55vh;
   object-fit: cover;
   transition: transform 1s;
-  border-radius: 0px 20px 20px 0px;
+  border-radius: 20px 20px 20px 20px;
 }
 
 img.img:hover {

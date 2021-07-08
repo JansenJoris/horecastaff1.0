@@ -6,8 +6,8 @@ export default async function handler(req, res) {
 
     //get from MongoDB database
 
-    const dataHorecastaff = await db.collection('horecastaffCN').find({}).limit(20).toArray()
-    console.log(dataHorecastaff);
-    res.json({ dataHorecastaff });
+    const dataKlanten = await db.collection('klantenBestand').find({}).limit(0).toArray()
+    console.log(dataKlanten);
+    res.json({ dataKlanten });
 }
 
