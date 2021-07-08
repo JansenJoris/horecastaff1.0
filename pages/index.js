@@ -45,7 +45,9 @@ export default function Home({ vacatures }) {
       </Head>
       <main>
         <Layout>
+          <div class='rounded shadow-lg m-4'>
             <Carousel />
+          </div>
           <div class='flex flex-row flex-wrap'>
             {
               vacatures && vacatures.map(vacature => (
