@@ -6,7 +6,7 @@
     "dev": "next dev",
     "start": "next start",
     "build": "npm run export",
-    "export": "next build && next export"
+    "export": "next build"
   },
   "dependencies": {
     "@fontsource/rajdhani": "^4.3.0",
