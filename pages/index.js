@@ -22,10 +22,6 @@ export async function getServerSideProps(context) {
       _id: vacature._id,
       name: vacature.name,
       image: vacature.image.picture_url,
-      /* address: vacature.address,
-      summary: vacature.summary,
-      guests: vacature.accommodates,
-      price: price.$numberDecimal, */
     }
   })
   return {
@@ -51,11 +47,11 @@ export default function Home({ vacatures }) {
           <div class='flex flex-row flex-wrap'>
             {
               vacatures && vacatures.map(vacature => (
-                <div class='flex-auto w-1/4 rounded overflow-hidden shadow-lg m-2'>
-                  <img class='w-full' src={vacature.image} />
+                <div key={vacature._id} class='flex-auto w-1/4 rounded overflow-hidden shadow-lg m-2'>
+                  <img class='w-4/5 h-60' src={vacature.image} />
                   <div class='px6  py-4'>
                     <div class='font-bold text-xl mb-2'>
-                      {vacature.name}{/* (Up to{vacature.guests} guests) */}
+                      {vacature.name}
                     </div>
                   </div>
                 </div>
