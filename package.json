@@ -17,6 +17,7 @@
     "@zeit/next-css": "^1.0.1",
     "mongodb": "^3.6.9",
     "mongoose": "^5.12.15",
+    "netlify-plugin-cache-nextjs": "^1.6.1",
     "next": "10.1.3",
     "next-google-fonts": "^2.2.0",
     "next-images": "^1.7.0",
