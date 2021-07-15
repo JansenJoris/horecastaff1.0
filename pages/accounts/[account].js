@@ -2,11 +2,11 @@ import React from 'react';
 import Layout from '../../components/layout/layout';
 
 
-const Signup = () => {
+const Account = () => {
     return (
         <Layout />
     )
 }
 
 
-export default Signup;
+export default Account;
