@@ -26,3 +26,9 @@ module.exports = {
 module.exports = {
     target: 'serverless'
 }
+module.exports = {
+    env: {
+        MONGODB_URI: 'mongodb+srv://Joris:29911Linleoni4@cluster0.v9lde.mongodb.net/horecastaffDb?retryWrites=true&w=majority',
+        MONGODB_DB: 'horecastaffDb'
+    },
+}
