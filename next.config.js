@@ -1,4 +1,4 @@
-const withImages = require("next-images");
+/* const withImages = require("next-images");
 module.exports = withImages();
 
 const withCSS = require('@zeit/next-css')
@@ -31,4 +31,4 @@ module.exports = {
         MONGODB_URI: 'mongodb+srv://Joris:29911Linleoni4@cluster0.v9lde.mongodb.net/horecastaffDb?retryWrites=true&w=majority',
         MONGODB_DB: 'horecastaffDb'
     },
-}
+} */
