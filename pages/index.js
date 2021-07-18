@@ -7,7 +7,7 @@ import Carousel from '../components/carousel/carousel.js'
 
 import Head from 'next/head';
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { db } = await connectToDatabase()
 
   const data = await db.collection('horecastaffCN'/* 'listingsAndReviews' */).find({}).limit(5).toArray()

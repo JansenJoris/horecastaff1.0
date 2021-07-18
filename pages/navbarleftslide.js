@@ -1,7 +1,7 @@
 import React from 'react';
 
 //navBar
-import { makeStyles } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
@@ -15,7 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
-const useStyles = makeStyles({
+const useStyles = createTheme({
     fullList: {
         width: '20vw',
         marginTop: '10%',

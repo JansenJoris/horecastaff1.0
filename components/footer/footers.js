@@ -2,14 +2,14 @@ import React from 'react';
 
 import Link from '@material-ui/core/Link';
 
-import { makeStyles } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
 
 
-const useStyles = makeStyles(() => ({
+const useStyles = createTheme(() => ({
   footer: {
     display: 'flex',
     flexDirection: 'row',
@@ -19,9 +19,9 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Footer = () => {
-  const styles = useStyles();
+  const classes = useStyles;
   return (
-    <div className={styles.footer}>
+    <div className={classes.footer}>
 
       <Link href='https://www.facebook.com/horecastaff' passHref={true} color='inherit'>
         <FacebookIcon />

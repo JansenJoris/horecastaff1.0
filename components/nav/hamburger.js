@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link'
 //navBar
-import { makeStyles } from '@material-ui/core/styles';
+import { createTheme } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
@@ -15,7 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@material-ui/icons/Menu';
 
 
-const useStyles = makeStyles({
+const useStyles = createTheme({
     fullList: {
         width: '25vw',
         marginTop: '10vh',
@@ -37,8 +37,8 @@ const useStyles = makeStyles({
     }
 });
 
-export default function Hamburger() {
-    const classes = useStyles();
+ const Hamburger = () => {
+    const classes = useStyles;
     const [state, setState] = React.useState({
         left: false,
     });
@@ -128,3 +128,5 @@ export default function Hamburger() {
         </div>
     );
 }
+
+export default Hamburger;
