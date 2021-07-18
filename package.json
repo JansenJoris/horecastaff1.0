@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
-    "build": "npm run build",
+    "build": "yarn run build",
     "export": "next build && next export"
   },
   "dependencies": {
